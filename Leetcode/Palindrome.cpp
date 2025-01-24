@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Palindrome
 bool isPalindrome(int x) {
         if (x < 0) {
             return false;
@@ -17,6 +18,8 @@ bool isPalindrome(int x) {
         }
         return reverse == x;
     }
+
+// Palindrome recursion
 
 int main()
 {
