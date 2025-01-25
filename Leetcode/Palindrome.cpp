@@ -19,7 +19,7 @@ bool isPalindrome(int x) {
         return reverse == x;
     }
 
-// Palindrome recursion
+// Palindrome recursion way
 
 int main()
 {
