@@ -1,0 +1,15 @@
+Tell me about yourlself
+Deployement: AWS, Docker, Nvidia Jetson
+Activation function and optmizers: ReLu, Sigmoid activations
+Frameworks of ML and DL: Tensorflow, PyTorch, Caffe, Keras
+Types of ML: Supervised, unsupervised, semi-supervised, reinforcement learning
+Outliers: Datapoints that singnificantly deviates from other observations
+Checkpoints in DL:Saved snapshots of model during training
+Logistic regression use: Classification
+Algorithms in ML, DL: Linear, Logistic Regression, SVM, KNN, K-Means, Naive Bayes, Descison Tree, Random Forest
+Random forest is based on: Decision Tree
+CNN Algorithms or pretrained models: AlexNet, VGG, GoogleNet, ResNet, ConvNeXt, YOLO family, R-CNN family, SSD, RetinaNet, CenterNet, DETR, U-Net, DeepLab, OWLv2, Grounding DINO
+OCR live projects
+Team members: 4
+Set method in Python: unique elements
+No error in python: Exception handling
