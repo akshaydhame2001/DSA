@@ -1,7 +1,8 @@
 Tell me about yourlself
 Deployement: AWS, Docker, Nvidia Jetson
-Activation function and optmizers: ReLu, Sigmoid activations
-Frameworks of ML and DL: Tensorflow, PyTorch, Caffe, Keras
+Activation function and optmizers: ReLu, Sigmoid activations | Adam, SGD, RMSProp, AdaGrad
+Loss Functions: Cross Entropy, MSE
+Frameworks of ML and DL: Tensorflow, PyTorch, Caffe, Keras, Scikit-learn
 Types of ML: Supervised, unsupervised, semi-supervised, reinforcement learning
 Outliers: Datapoints that singnificantly deviates from other observations
 Checkpoints in DL:Saved snapshots of model during training
