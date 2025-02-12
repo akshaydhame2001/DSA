@@ -13,3 +13,5 @@ OCR live projects
 Team members: 4
 Set method in Python: unique elements
 No error in python: Exception handling
+Evaluation metrics in ML: Regression- MAE, MSE, RMSE, R-Sq Classification- Accuracy, Precsion, Recall, F1 score, AUC-ROC
+Sequencial and Parallel algos: Linear-Regressions Parallel- SGD, Random Forest, XGBoost
