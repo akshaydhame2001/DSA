@@ -1,0 +1,28 @@
+JD:
+Programming Languages: Python (required), familiarity with frameworks like TensorFlow, PyTorch, or JAX.
+Generative AI: Experience with RAG, LLMs, and related architectures.
+Tools & Libraries: DeepEval, Foolbox, Adversarial Robustness Toolbox (ART), AI Fairness 360, CleverHans, TextAttack.
+AI/ML Expertise: Strong understanding of supervised, unsupervised, and reinforcement learning.
+APIs & Integrations: Experience with RESTful APIs and working with AI/ML cloud platforms (e.g., AWS SageMaker, Google AI, Azure AI).
+Data: Proficiency in working with large datasets, data pipelines, and feature engineering.
+Experience:
+
+Required:
+3+ years of hands-on experience in AI/ML model development.
+Demonstrated experience in developing robust, scalable AI systems.
+Practical exposure to adversarial machine learning and AI fairness techniques.
+Preferred:
+Background in NLP, computer vision, or multimodal AI applications.
+Experience in deploying AI solutions in production.
+
+
+Brief overiew of your work
+Experience of web
+Experience of AI or Generative AI
+How you optimised model with deepstream
+How this object detection works
+Any work on Multimodal models
+How you built this RAG LLM Chatbot project with Llama
+Explain how you implemented this reatime streaming
+Explian about social media project
+What is chroma DB used for
