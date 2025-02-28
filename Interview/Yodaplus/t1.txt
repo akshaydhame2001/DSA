@@ -1,0 +1,56 @@
+usememo and usecallback
+CSR vs SSR
+react query
+abc() {try return 1} {catch return 2} {finally 5} console.log(abc())
+pydantic advantages
+websocket stream, Fine tunning for chatbot or general RAG
+request faster in fastapi having 10 seconds time: async await sleep
+JWT expiry in fastapi where
+fetching 2 collection in mongodb and mysql
+2 methods of finding array has duplicate elements
+Valid Sudoku problem
+Questions on resume
+
+Problems:
+def find_duplicates(arr, method="set"):
+    if method == "set":
+        seen = set()
+        for item in arr:
+            if item in seen: return True
+            seen.add(item)
+        return False
+    elif method == "loops":
+        for i in range(len(arr)):
+            for j in range(i + 1, len(arr)):
+                if arr[i] == arr[j]: return True
+        return False
+    elif method == "dict":
+        counts = {}
+        for item in arr:
+            if item in counts: return True
+            counts[item] = 1
+        return False
+    else:
+        return None
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        r = [set() for _ in range(9)]
+        c = [set() for _ in range(9)]
+        b = [set() for _ in range(9)]
+
+        for i in range(9):
+            for j in range(9):
+                if board[i][j] == ".":
+                    continue
+                num = board[i][j]
+                if num in r[i]:
+                    return False
+                r[i].add(num)
+                if num in c[j]:
+                    return False
+                c[j].add(num)
+                bi = (i//3)*3 + (j//3)
+                if num in b[bi]:
+                    return False
+                b[bi].add(num)
+        return True
