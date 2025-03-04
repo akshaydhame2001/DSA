@@ -1,0 +1,46 @@
+Explain assignment
+what is padding in model
+what are checkpoints
+how to create checkpoints
+how to prevent overfitting without increasing dataset by augumentation
+what is early stopping
+how to stream yolov8 with frontend
+Explain about ANPR with PaddleOCR
+Experience of deployement to cloud and edge
+Model optimizations
+Questions about Generative AI, Mutimodal models
+What is Normalization
+Activation function sigmoid, relu, leaky relu, softmax
+Explain about WebRTC streaming
+Create a dict storing length of string, no. of vowels and no. of capital words for each words
+
+import re
+
+def analyze_sentence(sentence):
+    words = re.findall(r'\b\w+\b', sentence)  # Extract words ignoring punctuation
+    result = {}
+
+    for word in words:
+        length = len(word)
+        
+        vowel_count = 0
+        capital_count = 0
+        
+        for char in word:
+            if char.lower() in "aeiou":
+                vowel_count += 1
+            if char.isupper():
+                capital_count += 1
+
+        result[word] = {
+            "length": length,
+            "vowel_count": vowel_count,
+            "capital_count": capital_count
+        }
+    
+    return result
+
+# Example usage
+sentence = "Hello World, this is OpenAI!"
+analysis = analyze_sentence(sentence)
+print(analysis)
