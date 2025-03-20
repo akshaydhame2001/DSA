@@ -1,0 +1,12 @@
+Brief me about yourself and Experience.
+Are your project in production?
+What edge devices you have worked on?
+Stack or frameworks used?
+Languages known?
+Python Decorators and lambda functions with examples?
+C/C++ Functional pointers, calloc, malloc?
+Why do you want to Switch?
+What's your current and expected package?
+Why not C++ on edge AI?
+Interviewer: Three Devs apart from me working on developing models at low cost.
+Interviewer: Everything is Edge AI.
