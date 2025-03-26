@@ -3,6 +3,7 @@ Are your project in production?
 What edge devices you have worked on?
 Stack or frameworks used?
 Languages known?
+Differ Synchronous vs Asynchronous vs Concurrent Languages?
 Python Decorators and lambda functions with examples?
 C/C++ Functional pointers, calloc, malloc?
 Why do you want to Switch?
