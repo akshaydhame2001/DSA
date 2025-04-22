@@ -1,0 +1,16 @@
+38 MCQ 2 Text 50 behavioral 
+Types pf ML: Supervised, Unsupervised, Reinforcement
+LLMs decoder Only: GPT
+Biredirectional LLM: BERT
+Python longest KW length: 79
+Django Middleware: Modifying request/response
+RAG System: Retriver
+Imbalanced dataset metrics: F1 score or recall
+Classification models: KNN, SVM
+Supervised and Unsupervised model
+Model optimization techniques
+Underfitting and Overfitting
+Transfer learning: Finetnning
+Softmax: output layer Classification
+Softmax: probabitlity Distribution
+Binary Classification: Sigmoid

@@ -1,0 +1,12 @@
+Experience with PyTorch, Fine tunning and deployement
+BharatGen
+Regression for Classification: Logistic
+Pooling with max value: Max Pooling
+PyTorch Model: torch.nn
+PyTorch Optimization: torch.quatization
+PyTorch training visualization: tensorboard
+PyTorch gradient zero: zero_grad()
+Regularization: Avoid overfitting
+
+Coding round and 2-3 more rounds
+6-12 months contract Powai
