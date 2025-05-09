@@ -1,0 +1,57 @@
+How to setup new Object? def __init__(self):
+Decorators accept args for functions and modify them? Yes
+What is lambda function and can it take multiple args? anonymous func, Yes
+What is pickling? Serializing object into byte stream to send as file
+Library used for plotting? Matplotlib
+2D object of tabular data? pandas dataframe
+Read csv in pandas? pd.read_csv("data.csv")
+Check missing values in pandas? df.isnull()
+Function to get statistical summary in pandas? df.describe()
+Scikit-Learn function used to split dataset? train_test_split()
+Scikit-Learn lib for data analysis? sklean.preprocesisng
+Popular classification algorithms in sklearn? Logistic regression, KNN, SVM, Random forest, descision treea, naive bayes, gradient boosting, XGBoost
+Scale features with sklearn? Standardization(StandardScaler), Normalization(MinMaxScaler)
+Sklearn clusteering? Kmeans, DBSCN, Agglomerative, meanshift, spectral clustering
+sklearn method to train model? model.fit(x_train, y_train)
+What Y typically represent? Target or dependent variable
+Method in pandas to return first n rows? df.head(n)
+1D data structure in pandas? series
+What is merge conflict in git?
+Git stash? temporarily save uncommited changes
+Incorporate all new commits to mater branch? git rebase
+Git command to pick up commit and apply to another branch? cherry-pick
+Numpy convolve function parameters? full, same, valid
+What does SQL code do? second max salary row
+Which JOIN? right JOIN
+Modify table? ALTER table
+Mulitple conditions in SQL? CASE
+Docker command docker run -it aline /bin/bash? runs image as a container
+Command to create docker image? Docker build -t imageName: tag pathtoDockerfile
+DDos? Distributed deniel of service
+Protocol used to build secure connection between client and server? HTTPS
+Security? Encryption
+CDC in ETL? Chnage Data Capture
+No Duplicate in ETL? Idempotence
+Linux file commands? file, rm -r, touch
+Hierarchy files find? find
+
+
+Stock buy and sell problem? Leetcode 121
+def MaxProfit(arr):
+    if not arr or len(arr) < 2:
+        return -1
+    min_price = arr[0]
+    max_profit = -1
+
+    for price in arr[1:]:
+        if price > min_price:
+            max_profit = max(max_profit, price - min_price)
+        else:
+            min_price = price
+    return max_profit
+
+
+Data Analysi?
+df.describe()
+df.grouby('Genre')['Total_Gross].mean() or median() or std()
+Outliers
