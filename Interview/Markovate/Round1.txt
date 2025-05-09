@@ -1,0 +1,12 @@
+Brief about your work experience and roles or responsibilities?
+What is data drift? Change in input data therefore reduction in model performance.
+What are assumptions of linear regression? Linearity, Homoscedasticity, Mulivariate normality, independence, lack of multicollinearity, absence of endogeneity
+what are assumptions of logistic regression? A binary or ordinal dependent variable, independent observations, linearity in the log odds, absence of multicollinearity, and a sufficiently large sample size, no outliers
+Difference between Fine tuning and RAG? Training Fine-tuning involves retraining a pre-trained LLM on a new dataset, while RAG augments the LLM's knowledge with external data during inference. 
+What are retrival methods? Keyword based BM25 TF-IDF, Semantic similarity Vector Embeddings
+Describe chunking and tokenizing strategies? Rag chunking is dividing into manageable blocks, Tokenizing BPE words or subwords
+Define Embedding? Densse vector of numbers in high dimensional space with semantic meaning
+LangChain experience? Ollama, HuggingFace
+Expeience in creating apI WITH FastAPI? Yes
+Expeience in deployement edge and AWS? Yes
+Challenge faced in AI project and how you solved it? Optimizing for Edge AI
