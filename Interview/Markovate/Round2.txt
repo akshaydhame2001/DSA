@@ -1,0 +1,194 @@
+Brief about your experience?
+Challenge faced while deploying models?
+    1. Model Compatibility
+    Training often happens in one environment (e.g., Jupyter, Colab), but production requires Docker, cloud APIs, etc.
+    Solution: Use ONNX, TorchScript, or TensorFlow SavedModel for portability.
+    2. Dependency & Environment Issues
+    Version mismatches between local and production environments.
+    Solution: Use Docker and virtual environments to ensure consistency.
+    3. Scalability
+    Handling real-time predictions at scale can be difficult
+    Solution: Use model serving tools like:
+    TensorFlow Serving
+    TorchServe
+    FastAPI / Flask with gunicorn + nginx for REST APIs
+    4. Latency
+    Complex models like BERT or CNNs can be slow.
+    Solution:
+    Optimize model with quantization, pruning, ONNX, or TensorRT.
+    Use GPU or batching for faster inference.
+    5. Monitoring & Logging
+    No visibility into model drift or errors.
+    Solution: Implement model monitoring tools like Prometheus + Grafana or tools like WhyLabs, Fiddler, or Evidently AI.
+    6. Data Drift / Concept Drift
+    Over time, incoming data may not match training data.
+    Solution: Regularly retrain and monitor input data distribution.
+
+You have multi-level classification problem, how do you solve?
+    1. Flat Classification
+    Treat every sub-category as a unique class.
+    E.g., classes like "Vehicle-Car-Sedan", "Animal-Dog-Husky".
+    Simple to implement but ignores relationships between categories.
+    2. Two-Stage Classification
+    Stage 1: Predict high-level class (e.g., Vehicle, Animal)
+    Stage 2: Based on output, run second model to classify sub-types.
+    Example
+    # Stage 1: vehicle vs. animal
+    # Stage 2: if vehicle → car vs. bike vs. truck
+    3. Multi-Output Model
+    One model with multiple output heads:
+    Output 1: predicts Level 1 class
+    Output 2: predicts Level 2 class
+    Each level uses its own loss function and combined total loss is minimized.
+    4. Label Encoding with Hierarchical Loss
+    Encode label relationships (like taxonomies) and design custom loss to penalize incorrect predictions according to hierarchy distance.
+    More complex, but useful when misclassifying "SUV" as "Truck" should cost less than as "Bird".
+
+Sort array without using sort  method?
+    def find_max(arr):
+        maxEle = arr[0]
+        for i in arr[1:]:
+            if i > maxEle:
+                maxEle = i
+        return maxEle
+
+Remove duplicates from array without Set?
+    def make_unique(arr):
+        unique = []
+        for i in arr:
+            if i not in unique:
+                unique.append(i)
+        return unique
+
+Creas vehicle class with methods to get seater and wheeler?
+
+    class Vehicle:
+        def __init__(self, vehicle_type):
+            self.vehicle_type = vehicle_type.lower()
+        def get_seater(self):
+            if self.vehicle_type == 'car':
+                return 5
+            elif self.vehicle_type == 'bike':
+                return 2
+            elif self.vehicle_type == 'bus':
+                return 40
+            elif self.vehicle_type == 'auto':
+                return 3
+            elif self.vehicle_type == 'truck':
+                return 2
+            else:
+                return "Unknown vehicle type"
+        def get_wheels(self):
+            if self.vehicle_type == 'car':
+                return 4
+            elif self.vehicle_type == 'bike':
+                return 2
+            elif self.vehicle_type == 'bus':
+                return 6
+            elif self.vehicle_type == 'auto':
+                return 3
+            elif self.vehicle_type == 'truck':
+                return 6
+            else:
+                return "Unknown vehicle type"
+    v1 = Vehicle("car")
+    print(f"Car - Seater: {v1.get_seater()}, Wheels: {v1.get_wheels()}")
+    v2 = Vehicle("bike")
+    print(f"Bike - Seater: {v2.get_seater()}, Wheels: {v2.get_wheels()}")
+
+🔹 What is a Transformer?
+    A Transformer is a deep learning architecture introduced in the paper "Attention is All You Need" (2017). It is designed for sequence modeling tasks (like NLP), and relies entirely on attention mechanisms, discarding RNNs or convolutions.
+    Key components:
+    Self-Attention: Learns relationships between all elements in a sequence.
+    Positional Encoding: Injects information about token positions.
+    Encoder-Decoder structure (for tasks like translation).
+    Used in: BERT, GPT, T5, Vision Transformers (ViT), etc.
+
+🔹 RNN/LSTM vs Transformer
+    Feature	RNN / LSTM	Transformer
+    Sequential	Processes data step-by-step	Processes entire sequence in parallel
+    Long-range memory	Harder to capture	Easier via attention
+    Training Speed	Slower (can’t parallelize easily)	Faster (parallelizable)
+    Attention Mechanism	Optional (e.g. LSTM + attention)	Core component
+    Best for	Small sequences, low-latency tasks	Large datasets, long sequences
+
+🔹 What is Backpropagation?
+    Backpropagation is the algorithm used to train neural networks. It computes gradients of the loss function with respect to each weight using the chain rule and updates weights via gradient descent.
+    Steps:
+    Forward pass → compute predictions and loss.
+    Backward pass → calculate gradients.
+    Update weights using optimizer.
+
+🔹 What is a Loss Function?
+    A loss function quantifies the difference between the predicted output and the true output.
+    Examples:
+    MSE for regression
+    CrossEntropyLoss for classification
+    Used by backpropagation to guide the learning.
+
+🔹 Is the Loss Function Applied on the Pooling Layer?
+    No. Loss functions are not applied directly to pooling layers.
+    Pooling (e.g., MaxPool) is used to downsample feature maps.
+    Loss function is applied to the final output of the network compared to the target.
+
+🔹 Difference Between Linear vs Logistic Regression
+    Feature	Linear Regression	Logistic Regression
+    Type of task	Regression (continuous output)	Classification (binary/multiclass)
+    Output	Real number	Probability (0 to 1)
+    Activation Function	None	Sigmoid (or Softmax for multi-class)
+    Loss Function	MSE (Mean Squared Error)	Cross-Entropy Loss
+
+🔹 What Happens When We Apply Sigmoid to Linear Regression?
+    Applying a sigmoid to linear regression turns it into logistic regression.
+    The output becomes a probability between 0 and 1.
+    Now suitable for binary classification, not regression.
+
+🔹 What is a Decision Tree?
+    A decision tree is a supervised learning model used for classification and regression. It splits data into subsets based on feature values, forming a tree-like structure.
+    Key Concepts:
+    Nodes: decision rules on features
+    Leaves: final output/class
+    Splitting criteria: Gini impurity, entropy (for classification), MSE (for regression)
+    Advantages:
+    Interpretable
+    Handles non-linear data
+
+🔹 What is Docker?
+    Docker is an open-source platform that allows you to package applications and their dependencies into containers so they can run reliably across different environments.
+    Think of a Docker container as a lightweight, standalone virtual environment — it contains everything your application needs: code, libraries, system tools, runtime, and settings.
+    Why is Docker Significant?
+    1. Consistency Across Environments
+    No more "It works on my machine" issues.
+    Docker ensures your app runs the same way in development, testing, and production.
+    2. Portability
+    Containers can run on any machine with Docker installed (Linux, Windows, macOS, or cloud).
+    Great for sharing and deploying models.
+    3. Isolation
+    Each container runs in its own isolated environment — no conflict between different app dependencies.
+    4. Simplified Deployment
+    Package your ML model, API, and environment config into a single Docker image.
+    Easy to deploy to cloud (e.g., AWS, Azure, GCP) or platforms like Kubernetes.
+    5. Lightweight and Fast
+    Unlike virtual machines, Docker containers are much smaller and start almost instantly.
+    Example: Deploying a Machine Learning Model with Docker
+    You can build an API for your model (e.g., with FastAPI or Flask), and write a simple Dockerfile like this:
+    # Use base image
+    FROM python:3.10
+    # Set working directory
+    WORKDIR /app
+    # Copy your code and install dependencies
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
+    # Copy your ML code
+    COPY . .
+    # Run the API
+    CMD ["python", "app.py"]
+    Then run
+    docker build -t ml-model .
+    docker run -p 5000:5000 ml-model
+    Your model is now running in an isolated, reproducible environment.
+    In ML & DL Projects, Docker Helps:
+    Package model training environments
+    Deploy ML inference APIs
+    Integrate with CI/CD pipelines
+    Use in MLOps workflows (e.g., with Kubeflow, MLflow)
