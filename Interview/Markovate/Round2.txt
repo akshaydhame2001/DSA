@@ -192,3 +192,5 @@ Creas vehicle class with methods to get seater and wheeler?
     Deploy ML inference APIs
     Integrate with CI/CD pipelines
     Use in MLOps workflows (e.g., with Kubeflow, MLflow)
+
+NOTE: Always export .engine on deploying machine as it is hardware dependent
