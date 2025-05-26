@@ -1,0 +1,20 @@
+Dwell time analysis project:
+
+Setup:
+
+1. Install requirements.txt
+2. run inference.py
+3. for creating zone use scripts/draw_roi.py
+4. for custom zone and video use args (--zone_configuration_path and --source_video_path)
+
+Edge cases:
+
+1. Loss of track id
+2. Fluctuations in FPS
+
+Approach Used
+
+1. Detection yolov8 nano model for real-time inference
+2. Tracking with ByteTrack Tracker
+3. Computes the elapsed time for each tracked object by dividing the number of frames since its first
+    appearance in ROI by the FPS value of the video stream.

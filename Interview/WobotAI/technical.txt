@@ -1,0 +1,25 @@
+Have you forked System Design primer to contribute?
+Tell me about yourself?
+Challnge face in model development and deployment?
+Have you made custom deepstream pipelines?
+What is quantization?
+What does it called when we remove unwanted layers?
+What is TensorRT optimization?
+How you implemented WebRTC?
+Explain about your ANPR project and why you used particular models?
+Create random numpy array of 512 dimensions?
+Python 2 sum problem?
+What are generators and its keywords?
+How you can make your decorator?
+Have you setup a linux system?
+How you detect edges, vertical, vertical + horizontal, pythagoras theorem?
+How you constructed VLM with tree prediction?
+How an image is represented when we read it using imread?
+Memory management in python?
+What is CLIP?
+How does embedding work in VLM?
+What is cosine similarity?
+What is dot product?
+How you build docker container and make it compatible with local GPU?
+
+
