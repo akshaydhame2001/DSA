@@ -23,3 +23,178 @@ What is dot product?
 How you build docker container and make it compatible with local GPU?
 
 
+✅ Have you forked System Design Primer to contribute?
+Yes, I have explored the System Design Primer. While I haven't yet made a PR, I have forked it to study high-level architecture patterns like load balancing, caching, database sharding, etc., which helped during system design interviews.
+
+✅ Tell me about yourself?
+I'm Akshay Dhame, a frontend developer turned AI/ML enthusiast with hands-on experience in computer vision projects like ANPR and drone tracking systems. I’ve worked on full-stack development, YOLO-based object detection, WebRTC, and GPU-accelerated deployments using DeepStream and TensorRT. I love solving real-world problems with AI, optimizing models for edge/GPU, and deploying them in production.
+
+✅ Challenge faced in model development and deployment?
+Model Development: Balancing accuracy vs. inference speed, especially on edge devices. For instance, with YOLOv5, tuning confidence thresholds and image size without overfitting was tricky.
+
+Deployment: Integrating models with DeepStream pipelines, managing CUDA versions with TensorRT, and ensuring synchronization between model I/O and app logic in real-time pipelines.
+
+✅ Have you made custom DeepStream pipelines?
+Yes. I’ve created DeepStream pipelines using nvdsosd, nvinfer, and custom appsink for post-processing. I integrated custom YOLO models with nvinfer, used nvtracker for tracking, and handled multi-camera inputs for ANPR and drone-based use-cases.
+
+✅ What is quantization?
+Quantization reduces the precision of model weights and activations, typically from FP32 to INT8 or FP16. It makes models faster and lighter with minimal loss in accuracy—especially useful for edge devices and TensorRT optimization.
+
+✅ What is it called when we remove unwanted layers?
+It’s called model pruning. Pruning eliminates redundant neurons/filters in a network to reduce model size and computation without significant accuracy loss.
+
+✅ What is TensorRT optimization?
+TensorRT optimizes deep learning models for NVIDIA GPUs by applying:
+
+Layer fusion
+
+Precision calibration (FP16/INT8)
+
+Kernel auto-tuning
+
+Graph simplification
+It significantly boosts inference performance.
+
+✅ How you implemented WebRTC?
+I used WebRTC for real-time video streaming in a drone GCS. I utilized aiortc in Python and connected it with a React frontend. The media stream was processed by an inference pipeline before being sent to the frontend with low latency using WebSockets + WebRTC data channels.
+
+✅ Explain about your ANPR project and why you used particular models?
+My ANPR project detects number plates and recognizes characters.
+
+Detection: YOLOv5 due to its real-time capability and high accuracy.
+
+OCR: CRNN or EasyOCR for text recognition because they perform well with distorted/tilted characters.
+We integrated this into DeepStream for multi-camera inference and GPU acceleration.
+
+✅ Create random numpy array of 512 dimensions?
+python
+Copy
+Edit
+import numpy as np
+arr = np.random.rand(512)
+✅ Python 2 sum problem?
+In Python 2, sum() works but has performance issues with large lists. For strings or sequences, use ''.join() instead of sum(['a', 'b']). Also, sum doesn’t work with generators of non-numeric data.
+
+✅ What are generators and its keywords?
+Generators are lazy iterables created using:
+
+yield keyword
+
+Generator expressions ((x for x in range(10)))
+They help with memory-efficient iteration over large datasets.
+
+✅ How you can make your decorator?
+python
+Copy
+Edit
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before function")
+        result = func(*args, **kwargs)
+        print("After function")
+        return result
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+✅ Have you setup a Linux system?
+Yes. I’ve set up Linux environments (Ubuntu) for:
+
+CUDA & cuDNN installation
+
+TensorRT and DeepStream SDK setup
+
+Docker with GPU passthrough (NVIDIA Container Toolkit)
+
+SystemD services for running AI inference as a background service
+
+✅ How you detect edges, vertical, vertical + horizontal, Pythagoras theorem?
+Using Sobel filters:
+
+Horizontal edge: cv2.Sobel(img, cv2.CV_64F, 1, 0)
+
+Vertical edge: cv2.Sobel(img, cv2.CV_64F, 0, 1)
+
+Both: Use magnitude:
+magnitude = np.sqrt(sobel_x**2 + sobel_y**2) (Pythagoras)
+
+✅ How you constructed VLM with tree prediction?
+If referring to Visual-Language Models (VLM) using hierarchical/tree prediction:
+
+We tokenize captions/labels using tree-based class hierarchy (like WordNet).
+
+The model predicts nodes at each level using softmax.
+
+Embedding space aligns image & text using contrastive loss (CLIP-style).
+I used CLIP backbone + tree traversal during inference for fine-grained classification.
+
+✅ How an image is represented when we read it using imread?
+Using OpenCV:
+
+python
+Copy
+Edit
+img = cv2.imread('image.jpg')
+The image is represented as a NumPy array of shape (H, W, 3) in BGR format.
+
+✅ Memory management in Python?
+Python uses automatic memory management via reference counting and garbage collection (GC).
+
+GC handles cyclic references.
+
+Tools: gc module, sys.getsizeof, and memory profilers like memory_profiler.
+
+✅ What is CLIP?
+CLIP (Contrastive Language-Image Pre-training) is a model by OpenAI that jointly learns to understand images and text by training on image-text pairs. It uses:
+
+A vision encoder (like ViT)
+
+A text encoder (like Transformer)
+
+Trained using contrastive loss to bring matching image-text pairs close in embedding space.
+
+✅ How does embedding work in VLM?
+Both image and text are passed through respective encoders to get vectors. The idea is to place semantically similar image-text pairs close in a shared embedding space using contrastive training.
+
+✅ What is cosine similarity?
+Cosine similarity measures the cosine of the angle between two vectors:
+
+python
+Copy
+Edit
+cos_sim = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+Used to compare embeddings for similarity (e.g., in CLIP).
+
+✅ What is dot product?
+The dot product is the sum of products of corresponding vector elements. In ML, it's often used in attention mechanisms, similarity, or linear projections:
+
+python
+Copy
+Edit
+dot = np.dot(a, b)
+✅ How you build Docker container and make it compatible with local GPU?
+Install NVIDIA Container Toolkit:
+
+sudo apt install nvidia-container-toolkit
+Dockerfile:
+
+FROM nvcr.io/nvidia/pytorch:23.04-py3
+RUN pip install -r requirements.txt
+COPY . /app
+CMD ["python", "main.py"]
+Run with GPU:
+
+docker run --gpus all -v $PWD:/app my-image
+
+✅ What a Docker image contains?
+
+Base OS layer: Ubuntu OS
+Runtime language: CUDA & cuDNN for GPU acceleration
+PyTorch framework
+Application code/framework: Your application code from /app
+Deppendencies: All Python packages in requirements.txt
+Configurations: ENV
+EntryPoint Script: It runs main.py on container startup
+
+
