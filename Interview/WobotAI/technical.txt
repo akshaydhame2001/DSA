@@ -44,14 +44,10 @@ Quantization reduces the precision of model weights and activations, typically f
 It’s called model pruning. Pruning eliminates redundant neurons/filters in a network to reduce model size and computation without significant accuracy loss.
 
 ✅ What is TensorRT optimization?
-TensorRT optimizes deep learning models for NVIDIA GPUs by applying:
-
+TensorRT optimizes deep learning models for NVIDIA GPUs by applying
 Layer fusion
-
-Precision calibration (FP16/INT8)
-
+Precision calibration (FP16/INT8
 Kernel auto-tuning
-
 Graph simplification
 It significantly boosts inference performance.
 
@@ -67,9 +63,7 @@ OCR: CRNN or EasyOCR for text recognition because they perform well with distort
 We integrated this into DeepStream for multi-camera inference and GPU acceleration.
 
 ✅ Create random numpy array of 512 dimensions?
-python
-Copy
-Edit
+
 import numpy as np
 arr = np.random.rand(512)
 ✅ Python 2 sum problem?
@@ -84,9 +78,7 @@ Generator expressions ((x for x in range(10)))
 They help with memory-efficient iteration over large datasets.
 
 ✅ How you can make your decorator?
-python
-Copy
-Edit
+
 def my_decorator(func):
     def wrapper(*args, **kwargs):
         print("Before function")
